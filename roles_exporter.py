@@ -11,14 +11,14 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 IMPORT_RANGER_URL = raw_input("ENTER RANGER URL:-\t")
-USER_PATH_API = "/service/roles/roles/"
+ROLES_API = "/service/roles/roles/"
 IMPORT_RANGER_ADMIN_USER = raw_input("RANGER ADMIN USER:-\t")
 IMPORT_RANGER_ADMIN_PASSWORD = raw_input("RANGER ADMIN PASSWORD:-\t")
 headers = {'Accept' : 'application/json'}
 
 # Importing roles with all the configured users and groups
 
-response = get(IMPORT_RANGER_URL + USER_PATH_API, headers=headers, verify=False,
+response = get(IMPORT_RANGER_URL + ROLES_API, headers=headers, verify=False,
                auth=(IMPORT_RANGER_ADMIN_USER, IMPORT_RANGER_ADMIN_PASSWORD))
 roles_convert = json.loads(response.content)
 
@@ -35,7 +35,7 @@ headers = {'Accept' : 'application/json'}
 
 for ROLE in ROLES :
     time.sleep(5)
-    response = post(EXPORT_RANGER_URL + USER_PATH_API, headers=headers, json=ROLE, verify=False,
+    response = post(EXPORT_RANGER_URL + ROLES_API, headers=headers, json=ROLE, verify=False,
                     auth=(EXPORT_RANGER_ADMIN_USER, EXPORT_RANGER_ADMIN_PASSWORD))
     STATUS = response.status_code
     ROLENAME = ROLE['name']
