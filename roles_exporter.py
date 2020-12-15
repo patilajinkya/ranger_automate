@@ -25,7 +25,7 @@ roles_convert = json.loads(response.content)
 ROLES = roles_convert['roles']
 TOTAL_ROLES = len(ROLES)
 
-print TOTAL_ROLES + " will be exported."
+print str(TOTAL_ROLES) + " will be exported."
 
 EXPORT_RANGER_URL = raw_input("ENTER RANGER URL:- ")
 USER_PATH_API = "/service/roles/roles/"
