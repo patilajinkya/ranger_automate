@@ -23,7 +23,9 @@ response = get(IMPORT_RANGER_URL + ROLES_API, headers=headers, verify=False,
 roles_convert = json.loads(response.content)
 
 ROLES = roles_convert['roles']
-print ROLES
+TOTAL_ROLES = len(ROLES)
+
+print TOTAL_ROLES + " will be exported."
 
 EXPORT_RANGER_URL = raw_input("ENTER RANGER URL:-\t")
 USER_PATH_API = "/service/roles/roles/"
@@ -35,6 +37,7 @@ headers = {'Accept' : 'application/json'}
 
 for ROLE in ROLES :
     time.sleep(5)
+    del ROLE['id']
     response = post(EXPORT_RANGER_URL + ROLES_API, headers=headers, json=ROLE, verify=False,
                     auth=(EXPORT_RANGER_ADMIN_USER, EXPORT_RANGER_ADMIN_PASSWORD))
     STATUS = response.status_code
