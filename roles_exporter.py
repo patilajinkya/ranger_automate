@@ -28,7 +28,6 @@ TOTAL_ROLES = len(ROLES)
 print "Total number of roles " + str(TOTAL_ROLES) + " will be exported."
 
 EXPORT_RANGER_URL = raw_input("ENTER RANGER URL:- ")
-USER_PATH_API = "/service/roles/roles/"
 EXPORT_RANGER_ADMIN_USER = raw_input("RANGER ADMIN USER:- ")
 EXPORT_RANGER_ADMIN_PASSWORD = raw_input("RANGER ADMIN PASSWORD:- ")
 headers = {'Accept' : 'application/json'}
