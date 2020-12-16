@@ -10,10 +10,10 @@ import time
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-IMPORT_RANGER_URL = raw_input("ENTER RANGER URL:- ")
+IMPORT_RANGER_URL = raw_input("SOURCE_ENTER RANGER URL:- ")
 ROLES_API = "/service/roles/roles/"
-IMPORT_RANGER_ADMIN_USER = raw_input("RANGER ADMIN USER:- ")
-IMPORT_RANGER_ADMIN_PASSWORD = raw_input("RANGER ADMIN PASSWORD:- ")
+IMPORT_RANGER_ADMIN_USER = raw_input("SOURCE_RANGER ADMIN USER:- ")
+IMPORT_RANGER_ADMIN_PASSWORD = raw_input("SOURCE_RANGER ADMIN PASSWORD:- ")
 headers = {'Accept' : 'application/json'}
 
 # Importing roles with all the configured users and groups
@@ -27,9 +27,9 @@ TOTAL_ROLES = len(ROLES)
 
 print "Total number of roles " + str(TOTAL_ROLES) + " will be exported."
 
-EXPORT_RANGER_URL = raw_input("ENTER RANGER URL:- ")
-EXPORT_RANGER_ADMIN_USER = raw_input("RANGER ADMIN USER:- ")
-EXPORT_RANGER_ADMIN_PASSWORD = raw_input("RANGER ADMIN PASSWORD:- ")
+EXPORT_RANGER_URL = raw_input("DEST_ENTER RANGER URL:- ")
+EXPORT_RANGER_ADMIN_USER = raw_input("DEST_RANGER ADMIN USER:- ")
+EXPORT_RANGER_ADMIN_PASSWORD = raw_input("DEST_RANGER ADMIN PASSWORD:- ")
 headers = {'Accept' : 'application/json'}
 
 # Exporting roles with all the configured users and groups
