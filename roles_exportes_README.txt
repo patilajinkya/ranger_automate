@@ -5,4 +5,4 @@ For example:-
 IMPORT_RANGER_URL:- https://RANGER_HOST:RANGERPORT
 
 Install necessary modules before executing the script:-
-1} requests
+#pip install requests
