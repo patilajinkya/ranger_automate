@@ -50,7 +50,6 @@ for ROLE in ROLES :
     else:
         print "Import for role " + ROLENAME + " failed with status " + str(STATUS)
         FAILED_ROLES.append(ROLENAME)
-        FAILED_ROLES.append(ROLENAME)
         
 print "\n" + str(len(FAILED_ROLES)) + " Roles have failed to export" + \
       "\n" + str(len(IMPORTED_ROLES)) + " Roles have been imported successfully"
