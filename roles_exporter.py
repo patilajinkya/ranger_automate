@@ -35,7 +35,7 @@ headers = {'Accept' : 'application/json'}
 
 # Exporting roles with all the configured users and groups
 FAILED_ROLES = []
-SUCCESS_ROLES = []
+IMPORTED_ROLES = []
 for ROLE in ROLES :
     time.sleep(5)
     del ROLE['id']
