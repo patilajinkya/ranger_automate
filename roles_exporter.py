@@ -44,7 +44,7 @@ for ROLE in ROLES :
     STATUS = response.status_code
     ROLENAME = ROLE['name']
     if STATUS is 200:
-        print "Importing role" + ROLENAME + " with status " + str(STATUS)
+        print "Successfully Imported Role" + ROLENAME + " with status " + str(STATUS)
         SUCCESS_ROLES.append(ROLENAME)
         IMPORTED_ROLES.append(ROLENAME)
     else:
