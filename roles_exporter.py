@@ -34,7 +34,8 @@ EXPORT_RANGER_ADMIN_PASSWORD = getpass(prompt='DEST_RANGER ADMIN PASSWORD:- ', s
 headers = {'Accept' : 'application/json'}
 
 # Exporting roles with all the configured users and groups
-
+FAILED_ROLES = []
+SUCCESS_ROLES = []
 for ROLE in ROLES :
     time.sleep(5)
     del ROLE['id']
@@ -44,5 +45,7 @@ for ROLE in ROLES :
     ROLENAME = ROLE['name']
     if STATUS is 200:
         print "Importing role" + ROLENAME + " with status " + str(STATUS)
+        SUCCESS_ROLES.append(ROLENAME)
     else:
         print "Import for role " + ROLENAME + " failed with status " + str(STATUS)
+        FAILED_ROLES.append(ROLENAME)
