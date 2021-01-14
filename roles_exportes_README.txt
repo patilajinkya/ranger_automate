@@ -6,3 +6,8 @@ IMPORT_RANGER_URL:- https://RANGER_HOST:RANGERPORT
 
 Install necessary modules before executing the script:-
 #pip install requests
+
+
+Troubleshooting:-
+status 200:- Roles have been migrated successfully.
+status 400:- Either one if the goroup/user is mising or the role exists in ranger ui.
